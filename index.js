@@ -76,9 +76,6 @@ TuyaDimmer.prototype.getLightStatus = function(callback) {
     var powerState = this.powerState;
     var brightness = this.brightness;
 
-    var converted = [];
-    var converted2 = [];
-
     if(status !== undefined) {
       if(status.dps['1'] !== undefined) {
         powerState = status.dps['1'];
@@ -162,11 +159,7 @@ TuyaDimmer.prototype.setToCurrentColor = function(callback) {
 
       this.tuyaDebug("SENT dps[1]: " + dpsTmp['1']);
       this.tuyaDebug("SENT dps[2]: " + dpsTmp['2']);
-      // this.tuyaDebug("Sent dps[6]: " + dpsTmp['6']);
-      // this.tuyaDebug("Sent dps[7]: " + dpsTmp['7']);
-      // this.tuyaDebug("Sent dps[8]: " + dpsTmp['8']);
-      // this.tuyaDebug("Sent dps[9]: " + dpsTmp['9']);
-      // this.tuyaDebug("Sent dps[10]: " + dpsTmp['10']);
+      
       this.tuyaDebug('END TUYA SET Dimmer ' + this.debugPrefix);
     }
     callback();
